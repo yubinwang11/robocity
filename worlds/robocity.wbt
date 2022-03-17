@@ -1,9 +1,10 @@
-#VRML_SIM R2020a utf8
+#VRML_SIM R2022a utf8
 WorldInfo {
+  coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.0810559938904946 0.8766758485412208 0.4742039460389955 2.831249267530426
-  position 295.1198761016922 738.262455965845 -390.9285057769845
+  orientation 0.5317451549879461 0.5330745134755871 0.658087116747936 4.24739993531905
+  position -55.12719166774839 67.90959402345351 -282.9461416841254
 }
 TexturedBackground {
 }
@@ -11,6 +12,7 @@ TexturedBackgroundLight {
 }
 DEF GROUND Solid {
   translation 59.1099 -0.1 5.54772
+  rotation -1 0 0 1.5707963267948966
   children [
     Shape {
       appearance PBRAppearance {
@@ -23,34 +25,42 @@ DEF GROUND Solid {
     }
   ]
 }
+TheThreeTowers {
+  translation 31.63 -1.48539e-14 -62.74
+  rotation -0.5773502691896257 -0.5773502691896258 -0.5773502691896257 2.0943951023931957
+  name "three towers(1)"
+}
 DEF ROAD_NETWORK Group {
   children [
     StraightRoadSegment {
+      name "road(3)"
+    }
+    StraightRoadSegment {
+      translation 0 0 -33
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+      name "road_10(1)"
+      id "R10"
+      startJunction "I0"
+      endJunction "I1"
+      length 50
+    }
+    StraightRoadSegment {
       translation -71 0 25
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
       name "road(2)"
     }
     StraightRoadSegment {
       translation -71 0 15
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
       name "road(1)"
     }
     StraightRoadSegment {
       translation -71 0 5
-    }
-    CurvedRoadSegment {
-      translation 44 0 -18
-      name "road_9"
-      id "R9"
-      startJunction "R1"
-    }
-    StraightRoadSegment {
-      translation 54 0 -28
-      name "road_8"
-      id "R8"
-      startJunction "R9"
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
     }
     StraightRoadSegment {
       translation -58 0 -8
-      rotation 0 1 0 1.5707996938995747
+      rotation -1.190449340226202e-06 -0.7071067811860465 -0.7071067811860465 3.1415902726658627
       name "road_7"
       id "R7"
       startJunction "R6"
@@ -63,7 +73,7 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation -48 0 -8
-      rotation 0 1 0 1.5707996938995747
+      rotation -1.190449340226202e-06 -0.7071067811860465 -0.7071067811860465 3.1415902726658627
       name "road_6"
       id "R6"
       startJunction "R5"
@@ -76,7 +86,7 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation -38 0 -8
-      rotation 0 1 0 1.5707996938995747
+      rotation -1.190449340226202e-06 -0.7071067811860465 -0.7071067811860465 3.1415902726658627
       name "road_4"
       id "R4"
       startJunction "R3"
@@ -89,7 +99,7 @@ DEF ROAD_NETWORK Group {
     }
     Roundabout {
       translation -71 0 -8
-      rotation 0 1 0 0.7853996938995746
+      rotation -0.281084077387747 0.678598460593258 0.678598460593258 2.5935652845657784
       id "I1"
       connectedRoadIDs [
         "R7"
@@ -97,7 +107,7 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation -28 0 -8
-      rotation 0 1 0 1.5707996938995747
+      rotation -1.190449340226202e-06 -0.7071067811860465 -0.7071067811860465 3.1415902726658627
       name "road_3"
       id "R3"
       startJunction "R1"
@@ -110,7 +120,7 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation -18 0 -8
-      rotation 0 1 0 1.5707996938995747
+      rotation -1.190449340226202e-06 -0.7071067811860465 -0.7071067811860465 3.1415902726658627
       name "road_2"
       id "R2"
       startJunction "I0"
@@ -123,7 +133,7 @@ DEF ROAD_NETWORK Group {
     }
     RoadIntersection {
       translation 0 0 -8
-      rotation 0 1 0 0.7854
+      rotation -0.2810839653223405 0.6785984838027083 0.6785984838027084 2.5935654922850593
       id "I0"
       connectedRoadIDs [
         "R2"
@@ -132,6 +142,7 @@ DEF ROAD_NETWORK Group {
       ]
     }
     StraightRoadSegment {
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
       name "road_0"
       id "R0"
       startJunction "I0"
@@ -139,7 +150,7 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation 8 0 -8
-      rotation 0 1 0 1.5708
+      rotation -1.2986841950112879e-06 -0.7071067811859513 -0.7071067811859513 3.141590056252852
       name "road_1"
       id "R1"
       startJunction "I0"
@@ -148,40 +159,43 @@ DEF ROAD_NETWORK Group {
     }
     StraightRoadSegment {
       translation 0 0 -66
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
       name "road_10"
       id "R10"
       startJunction "I0"
       endJunction "I1"
       length 50
     }
-    RoadIntersection {
-      translation 0 0 -74
-      rotation 0 1 0 -0.7854003061004253
-      name "road intersection2"
-      id "I1"
-      connectedRoadIDs [
-        "R10"
-      ]
-    }
   ]
 }
 DEF BUILDINGS Group {
   children [
+    ModernHouse {
+      translation 13.04 0 -85.32
+      name "modern house(1)"
+    }
+    ModernHouse {
+      translation -37.2 0 -22.81
+    }
     BuildingUnderConstruction {
       translation -51 0 25
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
     }
     Auditorium {
-      translation 28 0 -30
+      translation 29.58 0.0199889 -30
+      rotation -1.695249475406826e-09 0.7071067811865476 0.7071067811865476 3.14159
     }
     TheThreeTowers {
       translation -31.87 0 4.16
-      rotation 0 1 0 3.141592653589793
+      rotation -0.5773502691896257 -0.5773502691896258 -0.5773502691896257 2.0943951023931957
     }
     CyberboticsTower {
       translation 22.2 0 16.8
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
     }
     Hotel {
       translation -12.6883 0 -20.4493
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
     }
   ]
 }
@@ -189,22 +203,23 @@ DEF OBJECTS Group {
   children [
     WorkTrashContainer {
       translation -50 0 15
-      rotation 0 -1 0 1.5707996938995747
+      rotation -0.9999999999971656 -1.6835523391208878e-06 -1.6835523390596553e-06 1.570796326797731
     }
     PublicToilet {
       translation -29 0 -2
-      rotation 0 1 0 1.57
+      rotation -0.0002815440420842606 0.7071067531614136 0.7071067531614136 3.141029565520413
     }
     BusStop {
       translation -5.70092 1.42108e-14 -35.8532
-      rotation 0 1 0 1.5707903061004251
+      rotation -2.128638108859294e-06 0.7071067811849455 0.7071067811849455 3.14158839631474
     }
     TrashContainer {
       translation -24.76 0 0
+      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
     }
     StoneFountain {
       translation 21.2757 0 1.20971
-      rotation 0 1 0 1.0472
+      rotation -0.18615590776985805 0.6947467085213072 0.6947467085213072 2.7734942721550704
     }
   ]
 }
@@ -212,6 +227,7 @@ DEF ORNAMENTS Group {
   children [
     Solid {
       translation -34.07 -0.01 6.23
+      rotation -1 0 0 1.5707963267948966
       children [
         Shape {
           appearance Appearance {
@@ -230,6 +246,7 @@ DEF ORNAMENTS Group {
     }
     Solid {
       translation 23.84 0.05 15.74
+      rotation -1 0 0 1.5707963267948966
       children [
         DEF GRASS Shape {
           appearance PBRAppearance {
@@ -243,333 +260,4 @@ DEF ORNAMENTS Group {
       name "solid(1)"
     }
   ]
-}
-DEF DEF_VEHICLE Robot {
-  translation -56.9228 36.9341 -65.3577
-  rotation 0 1 0 0.785388
-  scale 65 65 65
-  children [
-    Receiver {
-      name "receiver_main"
-      type "serial"
-      channel 1
-      bufferSize 32
-    }
-    Emitter {
-      name "emitter_plugin"
-      description "commuicates with physics plugin"
-    }
-    Shape {
-      appearance Appearance {
-        material Material {
-        }
-      }
-      geometry Box {
-        size 0.1 0.1 0.1
-      }
-    }
-    Camera {
-      translation 0 0.12 0
-      rotation 0 -1 0 2.356195
-      name "camera1"
-      width 128
-      height 128
-    }
-    Compass {
-      rotation 0 1 0 -0.7853983071795865
-      name "compass1"
-    }
-    GPS {
-      rotation 0 1 0 -0.785398
-      name "gps1"
-    }
-    Accelerometer {
-      rotation 0 1 0 -0.785398
-      name "accelerometer1"
-    }
-    Gyro {
-      rotation 0 1 0 -0.785398
-      name "gyro1"
-    }
-    InertialUnit {
-      rotation 0 -1 0 0.7853979999999999
-      name "inertial_unit"
-    }
-    Transform {
-      translation -0.09999999999999999 0 0
-      rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.094395
-      children [
-        Solid {
-          translation 0 0.35 0
-          rotation 1 0 0 1.5707959999999999
-          children [
-            Propeller {
-              shaftAxis 0 -1 0
-              thrustConstants -12.2583125 0
-              torqueConstants 18 0
-              device RotationalMotor {
-                name "motor3"
-                controlPID 10.001 0 0
-                maxVelocity 1000
-              }
-              fastHelix Solid {
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-              slowHelix Solid {
-                rotation 0 1 0 1.1667874781290464
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-          physics Physics {
-            mass 0.25
-          }
-        }
-        Shape {
-          appearance Appearance {
-            material Material {
-            }
-          }
-          geometry DEF DEF_ARM Cylinder {
-            height 0.1
-            radius 0.01
-          }
-        }
-      ]
-    }
-    Transform {
-      translation 0 0 0.09999999999999999
-      rotation 0 0.7071067811865476 0.7071067811865476 -3.1415923071795864
-      children [
-        Solid {
-          translation 0 0.35 0
-          rotation 1 0 0 1.5707959999999999
-          children [
-            Propeller {
-              shaftAxis 0 1 0
-              thrustConstants 12.2583125 0
-              torqueConstants 18 0
-              device RotationalMotor {
-                name "motor2"
-                controlPID 10.001 0 0
-                maxVelocity 1000
-              }
-              fastHelix Solid {
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-              slowHelix Solid {
-                rotation 0 -1 0 5.370767303526115
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-          name "solid(2)"
-          physics Physics {
-            mass 0.25
-          }
-        }
-        Shape {
-          appearance Appearance {
-            material Material {
-              diffuseColor 1 0.09 0
-            }
-          }
-          geometry USE DEF_ARM
-        }
-      ]
-    }
-    Transform {
-      translation 0.09999999999999999 0 0
-      rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 -2.094395307179586
-      children [
-        Solid {
-          translation 0 0.35 0
-          rotation 1 0 0 1.5707959999999999
-          children [
-            Propeller {
-              shaftAxis 0 -1 0
-              thrustConstants -12.2583125 0
-              torqueConstants 18 0
-              device RotationalMotor {
-                name "motor1"
-                controlPID 10.001 0 0
-                maxVelocity 1000
-              }
-              fastHelix Solid {
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-              slowHelix Solid {
-                rotation 0 1 0 5.486397909883531
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-          name "solid(1)"
-          physics Physics {
-            mass 0.25
-          }
-        }
-        Shape {
-          appearance Appearance {
-            material Material {
-              diffuseColor 1 0.09999999999999999 0
-            }
-          }
-          geometry USE DEF_ARM
-        }
-      ]
-    }
-    Transform {
-      translation 0 0 -0.09999999999999999
-      rotation 1 0 0 -1.5707963071795863
-      children [
-        Solid {
-          translation 0 0.35 0
-          rotation 1 0 0 1.5707959999999999
-          children [
-            Propeller {
-              shaftAxis 0 1 0
-              thrustConstants 12.2583125 0
-              torqueConstants 18 0
-              device RotationalMotor {
-                name "motor4"
-                controlPID 10.001 0 0
-                maxVelocity 1000
-              }
-              fastHelix Solid {
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-              slowHelix Solid {
-                rotation 0 -1 0 5.350616673324008
-                children [
-                  Shape {
-                    appearance Appearance {
-                      material Material {
-                        diffuseColor 1 0 0.1
-                      }
-                    }
-                    geometry Cylinder {
-                      height 0.002
-                      radius 0.02
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-          name "solid(3)"
-          physics Physics {
-            mass 0.25
-          }
-        }
-        Shape {
-          appearance Appearance {
-            material Material {
-              diffuseColor 0.7999999999999999 0.7999999999999999 0.7999999999999999
-            }
-          }
-          geometry USE DEF_ARM
-        }
-      ]
-    }
-  ]
-  name "quad_x_sitl_1"
-  boundingObject Box {
-    size 0.1 0.1 0.1
-  }
-  physics Physics {
-    density -1
-    mass 1.5
-    centerOfMass [
-      0 0 0
-    ]
-  }
-  rotationStep 0.261799
-  controller "ardupilot_SITL_QUAD"
-  controllerArgs "-p 5598  -df 0.01"
-  customData "1"
 }
